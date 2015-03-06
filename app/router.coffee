@@ -6,5 +6,8 @@ Router = Ember.Router.extend(
 )
 
 Router.map ->
+  @resource 'admin', ->
+    @resource 'admin.links', path: 'links', ->
+    @resource 'admin.compilations', path: 'compilations', ->
 
 `export default Router`
