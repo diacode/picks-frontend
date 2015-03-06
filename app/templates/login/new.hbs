@@ -1,5 +1,5 @@
-<form>
-  <input type="email" />
-  <input type="password" />
+<form {{action 'authenticate' on='submit'}}>
+  {{input value=identification placeholder='Enter Login'}}
+  {{input value=password placeholder='Enter Password' type='password'}}
   <input type="submit" value="login" />
 </form>

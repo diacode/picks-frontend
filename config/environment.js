@@ -23,6 +23,10 @@ module.exports = function(environment) {
     authenticationRoute: 'login.new'
   };
 
+  ENV['simple-auth-devise'] = {
+    identificationAttributeName: 'email'
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -33,11 +37,13 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self'",
       'font-src': "'self'",
-      'connect-src': "'self'",
+      'connect-src': "'self' http://localhost:3000/",
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
     }
+
+    ENV['simple-auth-devise'].serverTokenEndpoint = 'http://localhost:3000/users/sign_in';
   }
 
   if (environment === 'test') {
