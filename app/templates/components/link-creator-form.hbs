@@ -1,4 +1,4 @@
 <form {{action "saveLink" on="submit"}}>
-  {{input type="text" value=linkUrl}}
-  <input type="submit" value="add" />
+  {{input type="text" value=linkUrl disabled=isLoading}}
+  {{input type="submit" value="add" disabled=isLoading}}
 </form>
