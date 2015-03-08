@@ -1,5 +1,7 @@
 <p>This is admin/links/index.html</p>
 
+{{link-creator-form}}
+
 {{#each link in model}}
   <a {{bind-attr href=link.url}} target="_blank">{{link.title}}</a>
 {{else}}
