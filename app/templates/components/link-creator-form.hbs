@@ -1,4 +1,7 @@
 <form {{action "saveLink" on="submit"}}>
   {{input type="text" value=linkUrl disabled=isLoading}}
-  {{input type="submit" value="add" disabled=isLoading}}
+  {{#if invalidLink}}
+    <p style="color: red;">Invalid link</p>
+  {{/if}}
+  {{input type="submit" value="add" disabled=submitDisabled}}
 </form>
