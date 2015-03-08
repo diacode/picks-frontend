@@ -46,6 +46,7 @@ module.exports = function(environment) {
 
     ENV.API_HOST = 'http://localhost:3000';
     ENV['simple-auth-devise'].serverTokenEndpoint = 'http://localhost:3000/users/sign_in';
+    ENV['simple-auth'].crossOriginWhitelist = ['http://localhost:3000'];
   }
 
   if (environment === 'test') {
@@ -62,6 +63,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.API_HOST = 'https://picks-api.diacode.com';
+    ENV['simple-auth'].crossOriginWhitelist = ['https://picks-api.diacode.com'];
   }
 
   return ENV;
