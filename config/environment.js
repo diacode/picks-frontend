@@ -44,6 +44,7 @@ module.exports = function(environment) {
       'media-src': "'self'"
     }
 
+    ENV.API_HOST = 'http://localhost:3000';
     ENV['simple-auth-devise'].serverTokenEndpoint = 'http://localhost:3000/users/sign_in';
   }
 
@@ -60,7 +61,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.API_HOST = 'https://picks-api.diacode.com';
   }
 
   return ENV;
