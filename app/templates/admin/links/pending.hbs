@@ -2,15 +2,7 @@
 
 <div class="link-list">
   {{#each link in model}}
-    <div class="link-item">
-      <h2>{{link.title}}</h2>
-      
-      <div class="description">
-        {{link.description}}
-      </div>
-      
-      <a {{bind-attr href=link.url}} target="_blank">{{link.url}}</a>
-    </div>
+    {{editable-link link=link}}
   {{else}}
     <p>No links in the database</p>
   {{/each}}
