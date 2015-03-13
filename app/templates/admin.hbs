@@ -1,18 +1,45 @@
-<h2 id="title">Admin</h2>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      {{#link-to 'application' classNames="navbar-brand"}}
+        <img src="assets/images/logo-big-white.png" />    
+      {{/link-to}}  
+    </div>
+  </div>
+</nav>
+
+<div class="box-wrapper">
+  <div class="sidebar">
+    <ul class="nav">
+      <li>
+        {{#link-to 'admin.links.index'}}
+          <span class="glyphicon glyphicon-ok"></span>
+          <span>Approved</span>
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'admin.links.index'}}
+          <span class="glyphicon glyphicon-link"></span>
+          <span>Links</span>
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'admin.compilations.index'}}
+          <span class="glyphicon glyphicon-folder-open"></span>
+          <span>Compilations</span>
+        {{/link-to}}
+      </li>
+    </ul>
+  </div>
+
+  <div id="main">
+    {{outlet}}
+  </div>
+</div>
+
+{{!-- <h2 id="title">Admin</h2>
 
 <a {{ action 'invalidateSession' }} href="#">Logout</a>
 
-<ul>
-  <li>
-    {{#link-to 'admin.links.index'}}
-      Links
-    {{/link-to}}
-  </li>
-  <li>
-    {{#link-to 'admin.compilations.index'}}
-      Compilations
-    {{/link-to}}
-  </li>
-</ul>
+ --}}
 
-{{outlet}}

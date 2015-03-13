@@ -1,0 +1,71 @@
+.ember-view.admin{
+  .navbar{
+    min-height: 80px;
+
+    .navbar-brand{
+      img{
+        width: 125px;
+      }
+    }
+  }
+
+  .box-wrapper{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;  
+    display: flex;
+    display: -webkit-flex;
+
+    .sidebar{
+      flex: 0 1 auto;
+      -webkit-flex: 0 1 auto;
+      background-color: $sidebar-background-color;
+      width: 175px;
+
+      ul.nav{
+        li{
+          list-style-type: none;
+          text-align: center;
+
+          a{
+            padding: 2em 0;
+            border-bottom: 1px solid $sidebar-link-border-color;
+
+            &:hover{
+              background-color: darken($sidebar-background-color, 10%);
+            }
+
+            &.active{
+              background-color: $default-link-color;
+              color: #fff;
+
+              .glyphicon{
+                //color: #fff;
+              }
+            }
+
+            span{
+              display: block;
+              margin: 0.5em 0;
+
+              &.glyphicon{
+                font-size: 2em;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #main{
+      flex: 1 1 auto;
+      -webkit-flex: 1 1 auto;
+      overflow: scroll;
+      background-color: #EBEBEB;
+      padding: 0;
+      position: relative;
+    }
+  }
+}
