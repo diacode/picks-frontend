@@ -1,7 +1,7 @@
-<p>This is admin/links/approved.html</p>
-
-{{#each link in model}}
-  <a {{bind-attr href=link.url}} target="_blank">{{link.title}}</a><br/>
-{{else}}
-  <p>No links in the database</p>
-{{/each}}
+<div class="link-list">
+  {{#each link in controller}}
+    {{editable-link link=link}}
+  {{else}}
+    <p>No links in the database</p>
+  {{/each}}
+</div>
