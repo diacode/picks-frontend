@@ -1,7 +1,17 @@
 {{link-creator-form}}
 
-{{#each link in model}}
-  <a {{bind-attr href=link.url}} target="_blank">{{link.title}}</a><br/>
-{{else}}
-  <p>No links in the database</p>
-{{/each}}
+<div class="link-list">
+  {{#each link in model}}
+    <div class="link-item">
+      <h2>{{link.title}}</h2>
+      
+      <div class="description">
+        {{link.description}}
+      </div>
+      
+      <a {{bind-attr href=link.url}} target="_blank">{{link.url}}</a>
+    </div>
+  {{else}}
+    <p>No links in the database</p>
+  {{/each}}
+</div>

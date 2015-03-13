@@ -1,0 +1,14 @@
+.link-list{
+  padding: 2em;
+  max-width: 1000px;
+
+  .link-item{
+    background-color: #fff;
+    padding: 2em;
+    border-bottom: 1px solid #cecece;
+
+    h2{
+      margin-top: 0;
+    }
+  }
+}
