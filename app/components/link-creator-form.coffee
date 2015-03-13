@@ -20,7 +20,7 @@ LinkCreatorFormComponent = Ember.Component.extend(
       @set('isLoading', true)
 
       store = @get('targetObject.store')
-      link = store.createRecord('link', url: @get('linkUrl'))
+      link = store.createRecord('link', url: @get('linkUrl'), created_at: new Date())
 
       link.save().then (linkSaved) =>
         @set('linkUrl', "")
