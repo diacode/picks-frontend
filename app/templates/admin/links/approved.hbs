@@ -1,3 +1,9 @@
+{{#if controller.length}}
+  <div class="info-panel">
+    There are <strong>{{controller.length}}</strong> links approved.
+  </div>
+{{/if}}
+
 <div class="link-list">
   {{#each link in controller}}
     {{editable-link link=link}}

@@ -7,6 +7,36 @@
     padding: 2em;
     border-bottom: 1px solid #cecece;
 
+    .actions{
+      float: right;
+      margin-left: 1em;
+      visibility: hidden;
+
+      button{
+        background-color: transparent;
+        border: none;
+        font-size: 2em;
+        padding: 0;
+        color: darken(#fff, 15%);
+      }
+
+      &.open{
+        visibility: visible !important;
+
+        button{
+          box-shadow: none;
+          color: darken(#fff, 25%);
+        }
+      }
+    }
+
+    &:hover{
+      background-color: darken(#fff, 5%);
+      .actions{
+        visibility: visible;
+      }
+    }
+
     h2{
       margin-top: 0;
     }
