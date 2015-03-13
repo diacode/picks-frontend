@@ -1,0 +1,20 @@
+.ember-view.login{
+  .navbar{
+    min-height: 80px;
+
+    .navbar-header{
+      float: none;
+      display: block;
+      text-align: center;
+    }
+
+    .navbar-brand{
+      display: inline-block;
+      float: none;
+
+      img{
+        width: 125px;
+      }
+    }
+  }
+}

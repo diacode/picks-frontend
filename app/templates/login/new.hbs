@@ -1,5 +1,26 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      {{#link-to 'application' classNames="navbar-brand"}}
+        <img src="assets/images/logo-big-white.png" />    
+      {{/link-to}}  
+    </div>
+  </div>
+</nav>
+
 <form {{action 'authenticate' on='submit'}}>
-  {{input value=identification placeholder='Enter Login'}}
-  {{input value=password placeholder='Enter Password' type='password'}}
-  <input type="submit" value="login" />
+  <div class="form-group">
+    {{input value=identification placeholder='Email' class="form-control input-lg"}}
+  </div>
+
+  <div class="form-group">
+    {{input value=password placeholder='Password' type='password' class="form-control input-lg"}}
+  </div>
+
+  <div class="form-group">
+    <input type="submit" value="Login" class="btn btn-primary btn-lg" />
+    {{#link-to 'application' class="btn btn-default btn-lg" active=false}}
+      Cancel
+    {{/link-to}}
+  </div>
 </form>
