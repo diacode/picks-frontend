@@ -12,6 +12,12 @@ EditableLinkComponent = Ember.Component.extend(
     updateLink: ->
       @get('link').save().then (linkSaved) =>
         @set('isEditing', false)
+    approveLink: ->
+      link = @get('link')
+      link.set('approved', true)
+      link.save().then (linkSaved) =>
+        model = @get('targetObject.model')
+        model.removeObject(linkSaved)
 )
 
 `export default EditableLinkComponent`
