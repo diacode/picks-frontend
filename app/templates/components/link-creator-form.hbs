@@ -1,7 +1,7 @@
 <form class="link-creator-form form-inline" {{action "saveLink" on="submit"}}>
   <div class="form-group">
-    {{input type="text" value=linkUrl disabled=isLoading class="form-control"}}
-    {{input type="submit" value="Add" disabled=submitDisabled class="btn btn-primary"}}
+    {{input type="text" value=linkUrl disabled=isLoading class="form-control input-lg"}}
+    {{input type="submit" value="Add" disabled=submitDisabled class="btn btn-primary btn-lg"}}
   </div>
 
   {{#if invalidLink}}

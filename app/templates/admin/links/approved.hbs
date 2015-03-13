@@ -2,12 +2,17 @@
   <div class="info-panel">
     There are <strong>{{controller.length}}</strong> links approved.
   </div>
-{{/if}}
 
-<div class="link-list">
-  {{#each link in controller}}
-    {{editable-link link=link}}
-  {{else}}
-    <p>No links in the database</p>
-  {{/each}}
-</div>
+  <div class="link-list">
+    {{#each link in controller}}
+      {{editable-link link=link}}
+    {{else}}
+      <p>No links in the database</p>
+    {{/each}}
+  </div>
+{{else}}
+  <div class="blank-slate">
+    <span class="glyphicon glyphicon-time"></span>
+    <h3>There isn't any approved link at this moment.</h3>
+  </div>
+{{/if}}

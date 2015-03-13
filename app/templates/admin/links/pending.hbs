@@ -1,9 +1,16 @@
 {{link-creator-form}}
 
-<div class="link-list">
-  {{#each link in controller}}
-    {{editable-link link=link}}
-  {{else}}
-    <p>No links in the database</p>
-  {{/each}}
-</div>
+{{#if controller.length}}
+  <div class="link-list">
+    {{#each link in controller}}
+      {{editable-link link=link}}
+    {{else}}
+      <p>No links in the database</p>
+    {{/each}}
+  </div>
+{{else}}
+  <div class="blank-slate">
+    <span class="glyphicon glyphicon-time"></span>
+    <h3>There isn't any pending link at this moment.</h3>
+  </div>
+{{/if}}
