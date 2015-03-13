@@ -2,16 +2,16 @@
 
 EditableLinkComponent = Ember.Component.extend(
   classNames: ['link-item']
+  isEditing: false
   actions:
+    cancelEdition: ->
+      @get('link').rollback()
+      @set('isEditing', false)
+    editLink: ->
+      @set('isEditing', true)
     updateLink: ->
-      # @set('isLoading', true)
-
-      # store = @get('targetObject.store')
-      # link = store.createRecord('link', url: @get('linkUrl'))
-
-      # link.save().then (linkSaved) =>
-      #   @set('linkUrl', "")
-      #   @set('isLoading', false)
+      @get('link').save().then (linkSaved) =>
+        @set('isEditing', false)
 )
 
 `export default EditableLinkComponent`
