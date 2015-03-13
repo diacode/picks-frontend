@@ -5,6 +5,12 @@
         <img src="assets/images/logo-big-white.png" />    
       {{/link-to}}  
     </div>
+
+    <div class="collapse navbar-collapse">
+      <div class="navbar-right">
+        <a {{ action 'invalidateSession' }} href="#">Logout</a>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -36,10 +42,3 @@
     {{outlet}}
   </div>
 </div>
-
-{{!-- <h2 id="title">Admin</h2>
-
-<a {{ action 'invalidateSession' }} href="#">Logout</a>
-
- --}}
-
