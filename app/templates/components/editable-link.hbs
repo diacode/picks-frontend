@@ -18,10 +18,20 @@
     </div>
   </form>
 {{else}}
-  <h2 {{action "editLink" on="doubleClick"}}>{{link.title}}</h2>
+  <h2 {{action "editLink" on="doubleClick"}}>
+    {{#if link.title}}
+      {{link.title}}
+    {{else}}
+      <span class="text-muted">Title not available</span>
+    {{/if}}
+  </h2>
 
   <div class="description" {{action "editLink" on="doubleClick"}}>
-    {{markdown-to-html markdown=link.description}}
+    {{#if link.description}}
+      {{markdown-to-html markdown=link.description}}
+    {{else}}
+      <p class="text-muted">Description not available</p>
+    {{/if}}
   </div>
 
   <a {{bind-attr href=link.url}} target="_blank">{{link.url}}</a>
