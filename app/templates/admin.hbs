@@ -12,15 +12,15 @@
   <div class="sidebar">
     <ul class="nav">
       <li>
-        {{#link-to 'admin.links.index'}}
+        {{#link-to 'admin.links.approved'}}
           <span class="glyphicon glyphicon-ok"></span>
           <span>Approved</span>
         {{/link-to}}
       </li>
       <li>
-        {{#link-to 'admin.links.index'}}
-          <span class="glyphicon glyphicon-link"></span>
-          <span>Links</span>
+        {{#link-to 'admin.links.pending'}}
+          <span class="glyphicon glyphicon-question-sign"></span>
+          <span>Pending</span>
         {{/link-to}}
       </li>
       <li>

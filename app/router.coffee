@@ -8,6 +8,8 @@ Router = Ember.Router.extend(
 Router.map ->
   @resource 'admin', ->
     @resource 'admin.links', path: 'links', ->
+      @route 'approved'
+      @route 'pending'
     @resource 'admin.compilations', path: 'compilations', ->
 
   @resource 'login', ->
