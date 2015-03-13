@@ -20,11 +20,17 @@ LinkCreatorFormComponent = Ember.Component.extend(
       @set('isLoading', true)
 
       store = @get('targetObject.store')
-      link = store.createRecord('link', url: @get('linkUrl'), created_at: new Date())
+      model = @get('targetObject.model')
+      link = store.createRecord('link', url: @get('linkUrl'), approved: false, created_at: new Date())
 
       link.save().then (linkSaved) =>
         @set('linkUrl', "")
         @set('isLoading', false)
+        # We have to push the object since the model is being
+        # retrieved using findQuery. If we used findAll the
+        # push would be automatic
+        # See: http://stackoverflow.com/a/26489414
+        model.pushObject(linkSaved)
 )
 
 `export default LinkCreatorFormComponent`
