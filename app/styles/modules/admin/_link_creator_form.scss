@@ -1,0 +1,12 @@
+form.link-creator-form{
+  background: #fff;
+  padding:2em;
+
+  .form-group{
+    width: 100%;
+    
+    input[type="text"]{
+      width: 75%;
+    }
+  }
+}
