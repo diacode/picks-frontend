@@ -1,0 +1,33 @@
+<div id="compilations_wrapper">
+  <ul class="compilations-list">
+    {{#each compilation in model}}
+      <li>
+        {{#link-to 'admin.compilations.compilation' compilation}}
+          <div class="installment pull-left">
+            {{ compilation.installment }}
+          </div>
+          <div class="details pull-left">
+            <div class="link-count">
+              {{compilation.links.length}} links
+            </div>
+            <div class="status">
+              {{#if compilation.published_at}}
+                <div class="published">
+                  <span class="glyphicon glyphicon-ok"></span>
+                  Published {{ago compilation.published_at}}
+                </div>
+              {{else}}
+                Not published yet
+              {{/if}} 
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+
+  <div class="compilation-wrapper">
+    {{outlet}}
+  </div>
+</div>

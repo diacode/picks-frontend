@@ -11,6 +11,7 @@ Router.map ->
       @route 'approved'
       @route 'pending'
     @resource 'admin.compilations', path: 'compilations', ->
+      @resource 'admin.compilations.compilation', path: ':compilation_id'
 
   @resource 'login', ->
     @route 'new'

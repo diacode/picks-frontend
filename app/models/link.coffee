@@ -7,6 +7,7 @@ Link = DS.Model.extend(
   approved: DS.attr()
   created_at: DS.attr('date')
   updated_at: DS.attr('date')
+  compilation: DS.belongsTo('compilation')
 )
 
 `export default Link`
