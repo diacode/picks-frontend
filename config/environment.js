@@ -42,7 +42,7 @@ module.exports = function(environment) {
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
-    }
+    };
 
     ENV.API_HOST = 'http://localhost:3000';
     ENV['simple-auth-devise'].serverTokenEndpoint = 'http://localhost:3000/users/sign_in';
@@ -62,7 +62,18 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.contentSecurityPolicy = {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://picks-api.diacode.com/",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline'",
+      'media-src': "'self'"
+    };
+
     ENV.API_HOST = 'https://picks-api.diacode.com';
+    ENV['simple-auth-devise'].serverTokenEndpoint = 'http://picks-api.diacode.com/users/sign_in';
     ENV['simple-auth'].crossOriginWhitelist = ['https://picks-api.diacode.com'];
   }
 
