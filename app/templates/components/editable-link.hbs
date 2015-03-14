@@ -18,19 +18,21 @@
     </div>
   </form>
 {{else}}
-  <div class="btn-group actions">
-    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-      <span class="glyphicon glyphicon-cog"></span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-right" role="menu">
-      {{#if link.approved}}
-        <li><a {{action "unapproveLink"}}>Unapprove</a></li>
-      {{else}}
-        <li><a {{action "approveLink"}}>Approve</a></li>
-      {{/if}}
-      <li><a {{action "destroyLink"}}>Delete</a></li>
-    </ul>
-  </div>
+  {{#unless link.compilation}}
+    <div class="btn-group actions">
+      <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        <span class="glyphicon glyphicon-cog"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        {{#if link.approved}}
+          <li><a {{action "unapproveLink"}}>Unapprove</a></li>
+        {{else}}
+          <li><a {{action "approveLink"}}>Approve</a></li>
+        {{/if}}
+        <li><a {{action "destroyLink"}}>Delete</a></li>
+      </ul>
+    </div>
+  {{/unless}}
 
   <h2 {{action "editLink" on="doubleClick"}}>
     {{#if link.title}}

@@ -8,7 +8,8 @@ EditableLinkComponent = Ember.Component.extend(
       @get('link').rollback()
       @set('isEditing', false)
     editLink: ->
-      @set('isEditing', true)
+      unless @get('link.compilation')
+        @set('isEditing', true)
     updateLink: ->
       @get('link').save().then (linkSaved) =>
         @set('isEditing', false)

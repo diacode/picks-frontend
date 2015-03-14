@@ -5,7 +5,8 @@ Compilation = DS.Model.extend(
   created_at: DS.attr('date')
   updated_at: DS.attr('date')
   published_at: DS.attr('date')
-  links: DS.hasMany('link')
+  links: DS.hasMany('link', async: true)
+  links_count: DS.attr()
 )
 
 `export default Compilation`
