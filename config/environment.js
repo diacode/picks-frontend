@@ -73,7 +73,7 @@ module.exports = function(environment) {
     };
 
     ENV.API_HOST = 'https://picks-api.diacode.com';
-    ENV['simple-auth-devise'].serverTokenEndpoint = 'http://picks-api.diacode.com/users/sign_in';
+    ENV['simple-auth-devise'].serverTokenEndpoint = 'https://picks-api.diacode.com/users/sign_in';
     ENV['simple-auth'].crossOriginWhitelist = ['https://picks-api.diacode.com'];
   }
 
