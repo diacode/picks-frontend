@@ -3,6 +3,11 @@
 
 LoginNewController = Ember.Controller.extend(LoginControllerMixin,
   authenticator: 'simple-auth-authenticator:devise'
+  actions:
+    authenticate: ->
+      @_super().then(null, (error) =>
+        @set('errorMessage', error.error)
+      )
 )
 
 `export default LoginNewController`
