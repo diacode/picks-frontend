@@ -10,6 +10,13 @@ EditableLinkComponent = Ember.Component.extend(
     editLink: ->
       unless @get('link.compilation')
         @set('isEditing', true)
+        # Focusing proper control        
+        Ember.run.scheduleOnce('afterRender', =>
+          if $(event.target).parents(".description").length > 0
+            focusedControl = 'description'
+          else focusedControl = 'title'
+          @$(".form-control.#{focusedControl}").focus()
+        )
     updateLink: ->
       @get('link').save().then (linkSaved) =>
         @set('isEditing', false)

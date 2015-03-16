@@ -1,11 +1,11 @@
 {{#if isEditing}}
   <form {{action "updateLink" on="submit"}}>
     <div class="form-group">
-      {{input type="text" value=link.title placeholder="Title" class="form-control" escape-press="cancelEdition"}}
+      {{input type="text" value=link.title placeholder="Title" class="form-control title" escape-press="cancelEdition"}}
     </div>
 
     <div class="form-group">
-      {{textarea value=link.description placeholder="Description" class="form-control" escape-press="cancelEdition"}}
+      {{textarea value=link.description placeholder="Description" class="form-control description" escape-press="cancelEdition"}}
     </div>
 
     <div class="form-group">
