@@ -12,8 +12,8 @@ app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 app.import('bower_components/bootstrap/js/dropdown.js');
 
 // Glyphicons
-var pickFiles = require('broccoli-static-compiler');
-var bootstrapFonts = pickFiles('bower_components/bootstrap/dist/fonts', {
+var Funnel = require('broccoli-funnel');
+var bootstrapFonts = new Funnel('bower_components/bootstrap/dist/fonts', {
     srcDir: '/',
     destDir: '/fonts'
 });
