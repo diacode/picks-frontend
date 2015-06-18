@@ -30,7 +30,8 @@ LinkCreatorFormComponent = Ember.Component.extend(
         # retrieved using findQuery. If we used findAll the
         # push would be automatic
         # See: http://stackoverflow.com/a/26489414
-        model.pushObject(linkSaved)
+        # Inserting the object at the beginning of the array
+        model.unshiftObject(linkSaved._internalModel) # https://github.com/emberjs/data/issues/3313
 )
 
 `export default LinkCreatorFormComponent`

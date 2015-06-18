@@ -1,8 +1,5 @@
 `import Ember from "ember"`
 
-AdminLinksPendingController = Ember.ArrayController.extend(
-  sortProperties: ['created_at']
-  sortAscending: false
-)
+AdminLinksPendingController = Ember.Controller.extend()
 
 `export default AdminLinksPendingController`
