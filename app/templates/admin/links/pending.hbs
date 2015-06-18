@@ -1,8 +1,8 @@
 {{link-creator-form}}
 
-{{#if controller.length}}
+{{#if model.length}}
   <div class="link-list">
-    {{#each link in controller}}
+    {{#each model as |link|}}
       {{editable-link link=link}}
     {{else}}
       <p>No links in the database</p>

@@ -1,6 +1,6 @@
 <div id="compilations_wrapper">
   <ul class="compilations-list">
-    {{#each compilation in model}}
+    {{#each model as |compilation|}}
       <li>
         {{#link-to 'admin.compilations.compilation' compilation}}
           <div class="installment pull-left">

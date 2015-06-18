@@ -1,5 +1,5 @@
 <div class="link-list">
-  {{#each link in model.links}}
+  {{#each model.links as |link|}}
     {{editable-link link=link}}
   {{/each}}
 </div>
