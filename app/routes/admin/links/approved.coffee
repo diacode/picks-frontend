@@ -3,7 +3,7 @@
 
 AdminLinksApprovedRoute = AdminRoute.extend(
   model: ->
-    @store.findQuery('link', approved: true)
+    @store.query('link', approved: true)
 )
 
 `export default AdminLinksApprovedRoute`
