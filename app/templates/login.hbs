@@ -1,13 +1,15 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      {{#link-to 'application' classNames="navbar-brand"}}
-        <img src="assets/images/logo-big-white.png" />    
-      {{/link-to}}  
+<div class="login-layout">  
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        {{#link-to 'application' classNames="navbar-brand"}}
+          <img src="assets/images/logo-big-white.png" />    
+        {{/link-to}}  
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="container">
-  {{outlet}}
+  <div class="container">
+    {{outlet}}
+  </div>
 </div>

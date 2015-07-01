@@ -1,44 +1,46 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      {{#link-to 'application' classNames="navbar-brand"}}
-        <img src="assets/images/logo-big-white.png" />    
-      {{/link-to}}  
-    </div>
+<div class="admin-layout">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        {{#link-to 'application' classNames="navbar-brand"}}
+          <img src="assets/images/logo-big-white.png" />    
+        {{/link-to}}  
+      </div>
 
-    <div class="collapse navbar-collapse">
-      <div class="navbar-right">
-        <a {{ action 'invalidateSession' }} href="#">Logout</a>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-right">
+          <a {{ action 'invalidateSession' }} href="#">Logout</a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="box-wrapper">
-  <div class="sidebar">
-    <ul class="nav">
-      <li>
-        {{#link-to 'admin.links.approved'}}
-          <span class="glyphicon glyphicon-ok"></span>
-          <span>Approved</span>
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'admin.links.pending'}}
-          <span class="glyphicon glyphicon-question-sign"></span>
-          <span>Pending</span>
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'admin.compilations.index'}}
-          <span class="glyphicon glyphicon-folder-open"></span>
-          <span>Compilations</span>
-        {{/link-to}}
-      </li>
-    </ul>
-  </div>
+  <div class="box-wrapper">
+    <div class="sidebar">
+      <ul class="nav">
+        <li>
+          {{#link-to 'admin.links.approved'}}
+            <span class="glyphicon glyphicon-ok"></span>
+            <span>Approved</span>
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'admin.links.pending'}}
+            <span class="glyphicon glyphicon-question-sign"></span>
+            <span>Pending</span>
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'admin.compilations.index'}}
+            <span class="glyphicon glyphicon-folder-open"></span>
+            <span>Compilations</span>
+          {{/link-to}}
+        </li>
+      </ul>
+    </div>
 
-  <div id="main">
-    {{outlet}}
+    <div id="main">
+      {{outlet}}
+    </div>
   </div>
 </div>
