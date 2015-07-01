@@ -8,7 +8,7 @@ Link = DS.Model.extend(
   category: DS.attr()
   created_at: DS.attr('date')
   updated_at: DS.attr('date')
-  compilation: DS.belongsTo('compilation')
+  compilation: DS.belongsTo('compilation', async: true)
 )
 
 `export default Link`
