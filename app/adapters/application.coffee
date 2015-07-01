@@ -1,7 +1,7 @@
-`import DS from 'ember-data'`
+`import ActiveModelAdapter from 'active-model-adapter'`
 `import config from '../config/environment'`
 
-ApplicationAdapter = DS.ActiveModelAdapter.extend(
+ApplicationAdapter = ActiveModelAdapter.extend(
   host: config.API_HOST
   namespace: 'api'
 )
